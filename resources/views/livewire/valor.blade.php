@@ -25,7 +25,7 @@
                         <td>{{$valor->valor}}</td>
                         <td>
                             <button class="btn btn-warning" type="button" wire:click="edit({{$valor->id}})" data-toggle="modal" data-target="#editarValor">Editar</button>
-                            <button class="btn btn-danger" type="button" onclick="confirm('Esta seguro de borrar el Sector?') || event.stopImmediatePropagation()" wire:click="destroy({{$valor->id}})">Borrar</button>
+                            <button class="btn btn-danger" type="button" onclick="confirm('Esta seguro de borrar el Valor?') || event.stopImmediatePropagation()" wire:click="destroy({{$valor->id}})">Borrar</button>
                         </td>
                     </tr>
                     @endforeach
