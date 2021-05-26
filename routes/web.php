@@ -33,6 +33,13 @@ Route::get('/valor', function () {
     return view('valor');
 });
 
+
+Route::get('/presentacion', function () {
+    return view('presentacion');
+});
+
+
 Route::get('/linea', function () {
     return view('linea');
 });
+
