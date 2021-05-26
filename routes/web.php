@@ -32,3 +32,7 @@ Route::get('/objetivo', function () {
 Route::get('/valor', function () {
     return view('valor');
 });
+
+Route::get('/linea', function () {
+    return view('linea');
+});
