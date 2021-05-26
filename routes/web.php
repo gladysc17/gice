@@ -32,3 +32,8 @@ Route::get('/objetivo', function () {
 Route::get('/valor', function () {
     return view('valor');
 });
+
+Route::get('/presentacion', function () {
+    return view('presentacion');
+});
+
