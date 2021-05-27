@@ -36,10 +36,14 @@ Route::get('/valor', function () {
 
 Route::get('/presentacion', function () {
     return view('presentacion');
-});
+})->middleware('auth');
 
 
 Route::get('/linea', function () {
     return view('linea');
+});
+
+Route::get('/investigador', function () {
+    return view('investigador');
 });
 
