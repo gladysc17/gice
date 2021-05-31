@@ -47,3 +47,7 @@ Route::get('/investigador', function () {
     return view('investigador');
 });
 
+Route::get('/servicio', function () {
+    return view('servicio');
+});
+
