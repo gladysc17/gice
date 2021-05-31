@@ -47,3 +47,16 @@ Route::get('/investigador', function () {
     return view('investigador');
 });
 
+Route::get('/contacto', function () {
+    return view('contacto');
+});
+
+Route::get('/semillero', function () {
+    return view('semillero');
+});
+
+Route::get('/evento', function () {
+    return view('evento');
+});
+
+

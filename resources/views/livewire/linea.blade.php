@@ -13,7 +13,10 @@
                 <thead>
                     <tr>
                         <th style="width: 10px">#</th>
-                        <th>Nombre</th>
+                        <th>Linea</th>
+                        <th>Objetivo</th>
+                        <th>Logro</th>
+                        <th>Efecto</th>
                         <th>Accion</th>
                     </tr>
                 </thead>
@@ -23,6 +26,9 @@
                     <tr>
                         <td>{{$loop->index + 1}}</td>
                         <td>{{$linea->linea}}</td>
+                        <td>{{$linea->objetivo}}</td>
+                        <td>{{$linea->logro}}</td>
+                        <td>{{$linea->efecto}}</td>
                         <td>
                             <button class="btn btn-warning" type="button" wire:click="edit({{$linea->id}})" data-toggle="modal" data-target="#editarLinea">Editar</button>
                             <button class="btn btn-danger" type="button" onclick="confirm('Esta seguro de borrar la Linea?') || event.stopImmediatePropagation()" wire:click="destroy({{$linea->id}})">Borrar</button>
@@ -52,8 +58,20 @@
                 <div class="modal-body">
                     <form id="newLinea" wire:submit.prevent="save">
                         <div class="form-group">
-                            <label for="nombreLinea">Linea:</label>
-                            <input type="text" class="form-control" id="nombreLinea" aria-describedby="emailHelp" placeholder="Ingrese la Linea" required wire:model.defer="nombre">
+                            <label for="lineaLinea">Linea:</label>
+                            <textarea class="form-control" id="lineaLinea" rows="3" placeholder="Ingrese la Linea" required wire:model.defer="linea"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="objetivoLinea">Objetivo:</label>
+                            <textarea class="form-control" id="objetivoLinea" rows="3" placeholder="Ingrese el objetivo" required wire:model.defer="objetivo"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="logroLinea">Logros:</label>
+                            <textarea class="form-control" id="logroLinea" rows="3" placeholder="Ingrese el logro" required wire:model.defer="logro"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="efectoLinea">Efectos:</label>
+                            <textarea class="form-control" id="efectoLinea" rows="3" placeholder="Ingrese el efecto" required wire:model.defer="efecto"></textarea>
                         </div>
                     </form>
                 </div>
@@ -77,8 +95,20 @@
                 <div class="modal-body">
                     <form id="editLinea" wire:submit.prevent="update">
                         <div class="form-group">
-                            <label for="nombreSector">Linea:</label>
-                            <input type="text" class="form-control" id="nombreLinea" aria-describedby="emailHelp" placeholder="Ingrese la Linea" required wire:model.defer="nombre">
+                            <label for="lineaLinea">Linea:</label>
+                            <textarea class="form-control" id="lineaLinea" rows="3" aria-describedby="emailHelp" placeholder="Ingrese la Linea" required wire:model.defer="linea"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="objetivoLinea">Objetivo:</label>
+                            <textarea class="form-control" id="objetivoLinea" rows="3" aria-describedby="emailHelp" placeholder="Ingrese el objetivo" required wire:model.defer="objetivo"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="logroLinea">Logros:</label>
+                            <textarea class="form-control" id="logroLinea" rows="3" aria-describedby="emailHelp" placeholder="Ingrese el logro" required wire:model.defer="logro"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="efectoLinea">Efectos:</label>
+                            <textarea class="form-control" id="efectoLinea" rows="3" aria-describedby="emailHelp" placeholder="Ingrese el efecto" required wire:model.defer="efecto"></textarea>
                         </div>
                     </form>
                 </div>
