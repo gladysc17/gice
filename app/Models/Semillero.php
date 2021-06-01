@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class LineaInvestigacion extends Model
+class Semillero extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'linea',
-        'objetivo',
-        'logro',
-        'efecto',
+        'nombre',
+        'director',
+        'correo',
+        'caracteristicas',
     ];
 }
