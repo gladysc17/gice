@@ -14,6 +14,7 @@ class Servicio extends Component
     public $componente;
     public $componentes = [];
     public $deletedComponents = [];
+    public $descripcion;
 
     public function mount()
     {
@@ -35,7 +36,7 @@ class Servicio extends Component
 
     public function save()
     {
-        $serv = Service::create(['nombre' => $this->nombre]);
+        $serv = Service::create(['nombre' => $this->nombre, 'descripcion' => $this->descripcion]);
         foreach ($this->componentes as $compo) {
             $serv->componentes()->create([
                 'componente' => $compo['componente'],
@@ -43,6 +44,7 @@ class Servicio extends Component
         }
         $this->emit('servicio creado');
         $this->reset();
+        $this->mount();
     }
 
     public function destroy($id)
@@ -57,6 +59,7 @@ class Servicio extends Component
         $this->componentes = [];
         $this->servicio = Service::find($id);
         $this->nombre = $this->servicio->nombre;
+        $this->descripcion = $this->servicio->descripcion;
         foreach ($this->servicio->componentes as $compo) {
             //dd($compo->componente);
             $this->componentes[] = ['id' => $compo->id, 'componente' => $compo->componente];
@@ -65,7 +68,7 @@ class Servicio extends Component
 
     public function update()
     {
-        $this->servicio->update(['nombre' => $this->nombre]);
+        $this->servicio->update(['nombre' => $this->nombre, 'descripcion' => $this->descripcion]);
         foreach ($this->deletedComponents as $comp) {
             Componentecito::destroy($comp['id']);
         }
@@ -80,6 +83,7 @@ class Servicio extends Component
         }
         $this->emit('servicio editado');
         $this->reset();
+        $this->mount();
     }
 
     public function removeEditComponent($index)

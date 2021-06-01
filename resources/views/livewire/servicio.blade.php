@@ -14,6 +14,7 @@
                     <tr>
                         <th style="width: 10px">#</th>
                         <th>Nombre</th>
+                        <th>Descripcion</th>
                         <th>Componentes</th>
                         <th>Accion</th>
                     </tr>
@@ -24,6 +25,7 @@
                     <tr>
                         <td>{{$loop->index + 1}}</td>
                         <td>{{$servicio->nombre}}</td>
+                        <td>{{$servicio->descripcion}}</td>
                         <td>{{$servicio->componentes->count()}}</td>
                         <td>
                             <button class="btn btn-warning" type="button" wire:click="edit({{$servicio->id}})" data-toggle="modal" data-target="#editarServicio">Editar</button>
@@ -56,6 +58,10 @@
                         <div class="form-group">
                             <label for="nombreServicio">Nombre Servicio:</label>
                             <input type="text" class="form-control" id="nombreServicio" aria-describedby="emailHelp" placeholder="Ingrese El nombre del servicio" required wire:model.defer="nombre">
+                        </div>
+                        <div class="form-group">
+                            <label for="descripcionServicio">Descripcion:</label>
+                            <textarea id="descripcionServicio" class="form-control" rows="3" wire:model.defer="descripcion" placeholder="Ingrese la descripcion del servicio" required></textarea>
                         </div>
                         <table class="table" id="createComponents">
                             <thead>
@@ -104,6 +110,10 @@
                         <div class="form-group">
                             <label for="nombreServicio">Nombre Servicio:</label>
                             <input type="text" class="form-control" id="nombreServicio" aria-describedby="emailHelp" placeholder="Ingrese El nombre del servicio" required wire:model.defer="nombre">
+                        </div>
+                        <div class="form-group">
+                            <label for="descripcionServicioEdit">Descripcion:</label>
+                            <textarea id="descripcionServicioEdit" class="form-control" rows="3" wire:model.defer="descripcion" placeholder="Ingrese la descripcion del servicio" required></textarea>
                         </div>
                         <table class="table" id="editComponents">
                             <thead>
