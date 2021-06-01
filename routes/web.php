@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('inicio');
 });
 
 Auth::routes();
@@ -46,6 +46,12 @@ Route::get('/linea', function () {
 Route::get('/investigador', function () {
     return view('investigador');
 });
+
+
+Route::get('/servicio', function () {
+    return view('servicio');
+});
+
 
 Route::get('/contacto', function () {
     return view('contacto');
