@@ -10,7 +10,8 @@
                 <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#crearEvento">Crear Evento</button>
                
             </div>
-            
+            <div class="table-responsive">            
+
             <table class="table table-bordered">
                 <thead>
                     <tr>
@@ -57,6 +58,8 @@
                     @endif
                 </tbody>
             </table>
+
+            </div>
             
         </div>
         <!-- /.card-body -->
@@ -93,27 +96,27 @@
                         </div>
                         <div class="form-group">
                             <label for="programacion">Programacion:</label>
-                            <input type="text" class="form-control" id="programacionEvento" aria-describedby="emailHelp" placeholder="Ingrese la programacion" required wire:model.defer="programacion">
+                            <input type="text" class="form-control" id="programacionEvento" aria-describedby="emailHelp" placeholder="Ingrese la programacion"  wire:model.defer="programacion">
                         </div>
                         <div class="form-group">
                             <label for="afiche">Afiche</label>
-                            <input type="text" class="form-control" id="aficheEvento" aria-describedby="emailHelp" placeholder="Ingrese el afiche" required wire:model.defer="afiche">
+                            <input type="text" class="form-control" id="aficheEvento" aria-describedby="emailHelp" placeholder="Ingrese el afiche"  wire:model.defer="afiche">
                         </div>
                         <div class="form-group">
                             <label for="invitados">Invitados</label>
-                            <input type="text" class="form-control" id="invitadosEvento" aria-describedby="emailHelp" placeholder="Ingrese el invitados" required wire:model.defer="invitados">
+                            <input type="text" class="form-control" id="invitadosEvento" aria-describedby="emailHelp" placeholder="Ingrese el invitados"  wire:model.defer="invitados">
                         </div>
                         <div class="form-group">
                             <label for="formatos">Formatos</label>
-                            <input type="text" class="form-control" id="formatosEvento" aria-describedby="emailHelp" placeholder="Ingrese el formatos" required wire:model.defer="formatos">
+                            <input type="text" class="form-control" id="formatosEvento" aria-describedby="emailHelp" placeholder="Ingrese el formatos"  wire:model.defer="formatos">
                         </div>
                         <div class="form-group">
                             <label for="memorias">Memorias</label>
-                            <input type="text" class="form-control" id="memoriasEvento" aria-describedby="emailHelp" placeholder="Ingrese el memorias" required wire:model.defer="memorias">
+                            <input type="text" class="form-control" id="memoriasEvento" aria-describedby="emailHelp" placeholder="Ingrese el memorias"  wire:model.defer="memorias">
                         </div>
                         <div class="form-group">
                             <label for="registro">Registro</label>
-                            <input type="text" class="form-control" id="registroEvento" aria-describedby="emailHelp" placeholder="Ingrese el registro" required wire:model.defer="registro">
+                            <input type="text" class="form-control" id="registroEvento" aria-describedby="emailHelp" placeholder="Ingrese el registro"  wire:model.defer="registro">
                         </div>
                         <div class="form-group">
                             <label for="tipo">Tipo</label>
@@ -158,27 +161,27 @@
                         </div>
                         <div class="form-group">
                             <label for="programacionedit">Programacion:</label>
-                            <input type="text" class="form-control" id="programacionedit" aria-describedby="emailHelp" placeholder="Ingrese la programacion" required wire:model.defer="programacion">
+                            <input type="text" class="form-control" id="programacionedit" aria-describedby="emailHelp" placeholder="Ingrese la programacion"  wire:model.defer="programacion">
                         </div>
                         <div class="form-group">
                             <label for="aficheedit">Afiche:</label>
-                            <input type="text" class="form-control" id="aficheedit" aria-describedby="emailHelp" placeholder="Ingrese el afiche" required wire:model.defer="afiche">
+                            <input type="text" class="form-control" id="aficheedit" aria-describedby="emailHelp" placeholder="Ingrese el afiche"  wire:model.defer="afiche">
                         </div>
                         <div class="form-group">
                             <label for="invitadosedit">Invitados:</label>
-                            <input type="text" class="form-control" id="invitadosedit" aria-describedby="emailHelp" placeholder="Ingrese los invitados" required wire:model.defer="invitados">
+                            <input type="text" class="form-control" id="invitadosedit" aria-describedby="emailHelp" placeholder="Ingrese los invitados"  wire:model.defer="invitados">
                         </div>
                         <div class="form-group">
                             <label for="formatosedit">Formatos:</label>
-                            <input type="text" class="form-control" id="formatosedit" aria-describedby="emailHelp" placeholder="Ingrese los formatos" required wire:model.defer="formatos">
+                            <input type="text" class="form-control" id="formatosedit" aria-describedby="emailHelp" placeholder="Ingrese los formatos"  wire:model.defer="formatos">
                         </div>
                         <div class="form-group">
                             <label for="memoriasedit">Memorias:</label>
-                            <input type="text" class="form-control" id="memoriasedit" aria-describedby="emailHelp" placeholder="Ingrese las memorias" required wire:model.defer="memorias">
+                            <input type="text" class="form-control" id="memoriasedit" aria-describedby="emailHelp" placeholder="Ingrese las memorias"  wire:model.defer="memorias">
                         </div>
                         <div class="form-group">
                             <label for="registroedit">Registro:</label>
-                            <input type="text" class="form-control" id="registroedit" aria-describedby="emailHelp" placeholder="Ingrese el enlace" required wire:model.defer="registro">
+                            <input type="text" class="form-control" id="registroedit" aria-describedby="emailHelp" placeholder="Ingrese el enlace"  wire:model.defer="registro">
                         </div>
                         <div class="form-group">
                             <label for="tipoedit">Tipo:</label>

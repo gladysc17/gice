@@ -10,9 +10,17 @@ class LineaInvestigacion extends Model
     use HasFactory;
 
     protected $fillable = [
-        'linea',
+        'nombre',
         'objetivo',
-        'logro',
-        'efecto',
     ];
+
+    public function logros()
+    {
+        return $this->hasMany(Logro::class);
+    }
+
+    public function efectos(){
+        return $this->hasMany(Efecto::class);
+    }
+
 }
