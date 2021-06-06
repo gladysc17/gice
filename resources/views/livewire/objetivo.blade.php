@@ -53,7 +53,7 @@
                     <form id="newObjetivo" wire:submit.prevent="save">
                         <div class="form-group">
                             <label for="nombreObjetivo">Objetivo:</label>
-                            <input type="text" class="form-control" id="nombreObjetivo" aria-describedby="emailHelp" placeholder="Ingrese el objetivo" required wire:model.defer="nombre">
+                            <textarea id="nombreObjetivo" class="form-control" name="" rows="3" wire:model.defer="nombre" required></textarea>
                         </div>
                     </form>
                 </div>
@@ -78,7 +78,7 @@
                     <form id="editObjetivo" wire:submit.prevent="update">
                         <div class="form-group">
                             <label for="nombreObjetivo">Objetivo:</label>
-                            <input type="text" class="form-control" id="nombreObjetivo" aria-describedby="emailHelp" placeholder="Ingrese el objetivo" required wire:model.defer="nombre">
+                            <textarea id="nombreObjetivo" class="form-control" name="" rows="3" wire:model.defer="nombre" required></textarea>
                         </div>
                     </form>
                 </div>

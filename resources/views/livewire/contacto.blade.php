@@ -6,9 +6,9 @@
         <!-- /.card-header -->
         <div class="card-body">
             <div class="d-flex flex-row-reverse my-3">
-                
+                @if(!($contacto->count()))
                 <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#crearContacto">Crear Conacto</button>
-               
+                @endif
             </div>
             <table class="table table-bordered">
                 <thead>

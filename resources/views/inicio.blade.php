@@ -15,14 +15,14 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.11.0/css/mdb.min.css" rel="stylesheet">
-    {{--<link rel="shortcut icon" type="image/x-icon" href="images/CI.png" />--}}
     <meta name="description" content="GICE">
     <meta name="keywords" content="GICE">
-    <link rel="stylesheet" href="css/style.css">
+    {{--<link rel="stylesheet" href="css/style.css">--}}
+    @livewireStyles
 </head>
 
 <body class="grey lighten-3">
-    <header class="py-4 animated fadeInUp d-none d-lg-block" style="background-image: url(https://ingsistemas.cloud.ufps.edu.co/rsc/img/header-superior-principal.jpg); background-attachment: fixed;">
+    <header class="py-4 animated fadeInUp d-none d-lg-block" style="background-image: url('{{ asset('img/header-superior-principal.jpg') }}'); background-attachment: fixed;">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-2">
@@ -42,27 +42,179 @@
 
 
     <nav class="navbar sticky-top navbar-expand-lg text-center navbar-dark danger-color-dark animated fadeInUp slow">
-        <a class="navbar-brand mb-0 h1 ml-lg-5 d-none d-xs-none d-sm-none d-md-none d-lg-block" href="index.html">
-            Inicio</a>
-        <a class="navbar-brand mb-0 h1 ml-lg-5 d-block d-xs-none d-sm-block d-md-block d-lg-none" href="#">
-            <img src="https://ww2.ufps.edu.co/public/imagenes/noticia/Comunicado_073_grand.png" width="50" class="d-inline-block align-top" alt="">Oferta Exportable<br>N. Santander</a>
+        <a class="navbar-brand" href="#">
+            <img src="https://picsum.photos/50/50" height="50" alt="mdb logo">
+            <strong>GICE</strong>
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto ml-lg-5">
+            <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link d-block d-xs-none d-sm-block d-md-block d-lg-none" href="index.html">Inicio </a>
+                    <a class="nav-link" href="#aboutus">Presentacion</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#servicios">Servicios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#objetivos">Objetivos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#valores">Valores</a>
                 </li>
             </ul>
         </div>
     </nav>
-    <div class="container">
-        <div class="row d-flex justify-content-center pb-4">
+    <!--Carousel Wrapper-->
+    <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
+        <!--Indicators-->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-1z" data-slide-to="1"></li>
+            <li data-target="#carousel-example-1z" data-slide-to="2"></li>
+        </ol>
+        <!--/.Indicators-->
+        <!--Slides-->
+        <div class="carousel-inner" role="listbox">
+            <!--First slide-->
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="https://picsum.photos/1280/540" alt="First slide">
+            </div>
+            <!--/First slide-->
+            <!--Second slide-->
+            <div class="carousel-item">
+                <img class="d-block w-100" src="https://picsum.photos/1280/540" alt="Second slide">
+            </div>
+            <!--/Second slide-->
+            <!--Third slide-->
+            <div class="carousel-item">
+                <img class="d-block w-100" src="https://picsum.photos/1280/540" alt="Third slide">
+            </div>
+            <!--/Third slide-->
+        </div>
+        <!--/.Slides-->
+        <!--Controls-->
+        <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+        <!--/.Controls-->
+    </div>
+    <!--/.Carousel Wrapper-->
 
+    <div class="container-fluid">
 
+        <div class="row p-lg-5 pb-5 align-items-center" id="aboutus">
+            <div class="col-12 my-4 wow fadeIn">
+                <h1 class="text-center font-weight-bold">Presentacion</h1>
+            </div>
+            <div class="col-lg-6 mb-4 mb-md-0 wow fadeInUp">
+                <div class="card z-depth-2" style="border-radius: 50px; opacity: 0.85;">
+                    <div class="card-body">
+
+                        <!-- Title -->
+                        <h4 class="card-title text-center">Mision:</h4>
+                        <!-- Text -->
+                        <p class="card-text">
+                            @if(empty($presentacion))
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, deleniti ad itaque, corporis numquam modi nesciunt distinctio unde similique repellat enim quas, at ipsa? Officiis in nobis vitae aliquam mollitia.
+                            @else
+                            {{$presentacion[0]->mision}}
+                            @endif
+                        </p>
+                        <!-- Button -->
+                        <a href="#" class="btn btn-primary d-none">Button</a>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeInUp">
+                <div class="card z-depth-2" style="border-radius: 50px;opacity: 0.85;">
+                    <div class="card-body">
+
+                        <!-- Title -->
+                        <h4 class="card-title text-center">Vision:</h4>
+                        <!-- Text -->
+                        <p class="card-text">
+                            @if(empty($presentacion))
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut accusantium eum assumenda fugit perspiciatis necessitatibus accusamus quos quasi. Officiis, suscipit amet doloremque in adipisci vel sapiente quos blanditiis beatae quam!
+                            @else
+                            {{$presentacion[0]->vision}}
+                            @endif
+                        </p>
+                        <!-- Button -->
+                        <a href="#" class="btn btn-primary d-none">Button</a>
+
+                    </div>
+                </div>
+            </div>
 
         </div>
+
+
+
+        <livewire:servicio-front />
+
+        <div class="row p-lg-5 pb-5 align-items-center" id="objetivos">
+            <div class="col-12 my-4 wow fadeIn">
+                <h1 class="text-center font-weight-bold">Objetivos</h1>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <ul>
+                    @if($objetivos->count())
+                    @for($i=0; $i<($objetivos->count()/2); $i++ )
+                        <li class="my-2">{{$objetivos[$i]->objetivo}}</li>
+                        @endfor
+
+                        @endif
+                </ul>
+            </div>
+            <div class="col-md-6 mb-3">
+                <ul>
+                    @if($objetivos->count())
+                    @for($i=ceil($objetivos->count()/2); $i<$objetivos->count(); $i++ )
+                        <li class="my-2">{{$objetivos[$i]->objetivo}}</li>
+                        @endfor
+
+                        @endif
+                </ul>
+            </div>
+        </div>
+
+        <div class="row p-lg-5 pb-5 align-items-center" style="background-color: #b43432;" id="valores">
+            <div class="col-12 my-4 wow fadeIn">
+                <h1 class="text-center font-weight-bold white-text">Valores</h1>
+            </div>
+
+            <div class="col-md-6 mb-3 white-text">
+                <ul>
+                    @if($valores->count())
+                    @for($i=0; $i<($valores->count()/2); $i++ )
+                        <li class="my-2">{{$valores[$i]->valor}}</li>
+                        @endfor
+
+                        @endif
+                </ul>
+            </div>
+            <div class="col-md-6 mb-3 white-text">
+                <ul>
+                    @if($valores->count())
+                    @for($i=ceil($valores->count()/2); $i<$valores->count(); $i++ )
+                        <li class="my-2">{{$valores[$i]->valor}}</li>
+                        @endfor
+
+                        @endif
+                </ul>
+            </div>
+        </div>
+
+    </div>
     </div>
 
 
@@ -87,10 +239,14 @@
 
                     <!-- Content -->
                     <h5 class="text-uppercase">{{ config('app.name', 'Laravel') }}</h5>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores laborum nisi laboriosam delectus reprehenderit officiis cumque error odit molestiae? Est provident assumenda earum iusto quod unde, error veritatis. Fugiat, sit?
-                        <br>E-mail: <a href="mailto:sdfsdfsd@asdasd.org.co" target="_blank">sdfsdfsd@asdasd.org.co</a> / <a href="#" target="_blank">www.sdfsdf.org.co</a><br>
+                    @if($contacto)
+                    <p>Nombre: {{$contacto->nombre}}
+                        <br>E-mail: <a href="mailto:{{$contacto->correo}}" target="_blank">{{$contacto->correo}}</a><br>
+                        Telefono: {{$contacto->telefono}} <br>
+                        Direccion: {{$contacto->direccion}} <br>
                         Cúcuta - Norte de Santander - Colombia
                     </p>
+                    @endif
 
                 </div>
                 <!-- Grid column -->
@@ -153,7 +309,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.13.0/js/mdb.min.js"></script>
-
+    @livewireScripts
 </body>
 
 </html>
