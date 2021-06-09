@@ -53,7 +53,7 @@
                     <form id="newSector" wire:submit.prevent="save">
                         <div class="form-group">
                             <label for="nombreValor">Valor:</label>
-                            <input type="text" class="form-control" id="nombreValor" aria-describedby="emailHelp" placeholder="Ingrese El Valor" required wire:model.defer="nombre">
+                            <textarea id="nombreValor" class="form-control" name="" rows="3" wire:model.defer="nombre" required></textarea>
                         </div>
                     </form>
                 </div>
@@ -78,7 +78,7 @@
                     <form id="editSector" wire:submit.prevent="update">
                         <div class="form-group">
                             <label for="nombreSector">Valor:</label>
-                            <input type="text" class="form-control" id="nombreSector" aria-describedby="emailHelp" placeholder="Ingrese el Valor" required wire:model.defer="nombre">
+                            <textarea id="nombreSector" class="form-control" name="" rows="3" wire:model.defer="nombre" required></textarea>
                         </div>
                     </form>
                 </div>
