@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GICE</title>
+    <title>GINCUS</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Font Awesome -->
@@ -26,14 +26,15 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-2">
-                    <img src="https://picsum.photos/200/160" alt="" class="img-fluid" title="Comercio Internacional UFPS">
+                    <img src="/img/gincus.png" alt="" class="img-fluid" title="LOGO GINCUS">
                 </div>
                 <div class="col-6">
-                    <h1 class="h1">GICE</h1>
+                    <h1 class="h1">GINCUS</h1>
+                    <h4 class="h4"> Grupo de Investigación Para el Cuidado de la Salud - UFPS</h4>
                 </div>
 
                 <div class="col-lg-4 ml-auto ">
-                    <img src="https://picsum.photos/1280/480" class="img-fluid" title="OCIF">
+                    <img src="/img/logo-ufps.png" class="img-fluid" title="UFPS">
                 </div>
             </div>
         </div>
@@ -43,25 +44,48 @@
 
     <nav class="navbar sticky-top navbar-expand-lg text-center navbar-dark danger-color-dark animated fadeInUp slow">
         <a class="navbar-brand" href="#">
-            <img src="https://picsum.photos/50/50" height="50" alt="mdb logo">
-            <strong>GICE</strong>
+            <img src="/img/gincus.png" height="50" alt="mdb logo">
+            <strong>GINCUS</strong>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    PRESENTACIÓN</a>
+
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#aboutus">Misión & Visión</a>
+                        <a class="dropdown-item" href="#objetivos">Objetivos</a>
+                        <a class="dropdown-item" href="#valores">Valores</a>
+                        <a class="dropdown-item" href="#">Imagen corporativa</a>
+                        <a class="dropdown-item" href="#">Lineas de Investigación</a>
+                        <a class="dropdown-item" href="#">Investigadores</a>
+                        <a class="dropdown-item" href="#">Contacto</a>
+                    </div>
+                </li>
+
                 <li class="nav-item">
-                    <a class="nav-link" href="#aboutus">Presentacion</a>
+                    <a class="nav-link" href="#">PROYECTOS Y REDES</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="#servicios">SERVICIOS</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="#">EVENTOS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#servicios">Servicios</a>
+                    <a class="nav-link" href="#">PUBLICACIONES</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#objetivos">Objetivos</a>
+                    <a class="nav-link" href="#">RECOPILACIÓN PANELES</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#valores">Valores</a>
+                    <a class="nav-link" href="#">SEMILLEROS</a>
                 </li>
             </ul>
         </div>
@@ -111,14 +135,14 @@
 
         <div class="row p-lg-5 pb-5 align-items-center" id="aboutus">
             <div class="col-12 my-4 wow fadeIn">
-                <h1 class="text-center font-weight-bold">Presentacion</h1>
+                <h1 class="text-center font-weight-bold">Presentación</h1>
             </div>
             <div class="col-lg-6 mb-4 mb-md-0 wow fadeInUp">
                 <div class="card z-depth-2" style="border-radius: 50px; opacity: 0.85;">
                     <div class="card-body">
 
                         <!-- Title -->
-                        <h4 class="card-title text-center">Mision:</h4>
+                        <h4 class="card-title text-center">Misión:</h4>
                         <!-- Text -->
                         <p class="card-text">
                             @if(empty($presentacion))
@@ -138,7 +162,7 @@
                     <div class="card-body">
 
                         <!-- Title -->
-                        <h4 class="card-title text-center">Vision:</h4>
+                        <h4 class="card-title text-center">Visión:</h4>
                         <!-- Text -->
                         <p class="card-text">
                             @if(empty($presentacion))
