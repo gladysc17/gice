@@ -43,7 +43,8 @@
 
 
     <nav class="navbar sticky-top navbar-expand-lg text-center navbar-dark danger-color-dark animated fadeInUp slow">
-        <a class="navbar-brand" href="{{url('index')}}"> <img src="/img/gincus.png" height="50" alt="mdb logo"> 
+        <a class="navbar-brand" href="#">
+            <img src="/img/gincus.png" height="50" alt="mdb logo">
             <strong>GINCUS</strong>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,13 +57,13 @@
                     PRESENTACIÓN</a>
 
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#aboutus">Misión & Visión</a>
-                        <a class="dropdown-item" href="#objetivos">Objetivos</a>
-                        <a class="dropdown-item" href="#valores">Valores</a>
+                    <a class="dropdown-item" href="{{url('index#presentacion')}}">Misión & Visión</a>
+                        <a class="dropdown-item" href="{{url('index#objetivos')}}">Objetivos</a>
+                        <a class="dropdown-item" href="{{url('index#valores')}}">Valores</a>
                         <a class="dropdown-item" href="#">Imagen corporativa</a>
                         <a class="dropdown-item" href="{{url('linea')}}">Lineas de Investigación</a>
                         <a class="dropdown-item" href="{{url('investigador')}}">Investigadores</a>
-                        <a class="dropdown-item" href="#servicios">Servicios</a>
+                        <a class="dropdown-item" href="{{url('index#servicios')}}">Servicios</a>
                         <a class="dropdown-item" href="#">Contacto</a>
                     </div>
                 </li>
@@ -70,7 +71,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{url('proyecto')}}">PROYECTOS </a>
                 </li>
-
                 <li class="nav-item">
                     <a class="nav-link" href="{{url('red')}}">REDES</a>
                 </li>
@@ -90,160 +90,60 @@
             </ul>
         </div>
     </nav>
-    <!--Carousel Wrapper-->
-    <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
-        <!--Indicators-->
-        <ol class="carousel-indicators">
-            <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel-example-1z" data-slide-to="1"></li>
-            <li data-target="#carousel-example-1z" data-slide-to="2"></li>
-        </ol>
-        <!--/.Indicators-->
-        <!--Slides-->
-        <div class="carousel-inner" role="listbox">
-            <!--First slide-->
-            <div class="carousel-item active">
-                <img class="d-block w-100" src="https://picsum.photos/1280/540" alt="First slide">
-            </div>
-            <!--/First slide-->
-            <!--Second slide-->
-            <div class="carousel-item">
-                <img class="d-block w-100" src="https://picsum.photos/1280/540" alt="Second slide">
-            </div>
-            <!--/Second slide-->
-            <!--Third slide-->
-            <div class="carousel-item">
-                <img class="d-block w-100" src="https://picsum.photos/1280/540" alt="Third slide">
-            </div>
-            <!--/Third slide-->
-        </div>
-        <!--/.Slides-->
-        <!--Controls-->
-        <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-        <!--/.Controls-->
-    </div>
-    <!--/.Carousel Wrapper-->
+    <div class="container" style='margin: 20px; padding: 50px;'>
+  
+            <div class="row">
+                <div class="col">
+                
+                </div>
+                
+                <div class="col-10">
+               
+
+                <div class="col-md-12 col-sm-12 col-xs-12" style="border-bottom: 3px solid #aa1916;">
+                    <div class="row">
+                        <div class="col-md-12">
+                                <h1 style="font-size: 30px;">
+                                <b>Proyectos</b></h1>
+                        </div>
+                    </div>
+                </div>
+
+
 
     <div class="container-fluid">
+        <div class="row">
+        <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Descripcion</th>
+    </tr>
+  </thead>
+  <tbody>
+  @if(count($proyecto))
+  @foreach($proyecto as $pro)
+    <tr>
+      <th scope="row">{{$pro->nombre}}</th>
+      <td>{{$pro->descripcion}}</td>
 
-        <div class="row p-lg-5 pb-5 align-items-center" id="aboutus">
-            <div class="col-12 my-4 wow fadeIn">
-                <h1 class="text-center font-weight-bold">Presentación</h1>
-            </div>
-            <div class="col-lg-6 mb-4 mb-md-0 wow fadeInUp">
-                <div class="card z-depth-2" style="border-radius: 50px; opacity: 0.85;">
-                    <div class="card-body">
-
-                        <!-- Title -->
-                        <h4 class="card-title text-center">Misión</h4>
-                        <!-- Text -->
-                        <p class="card-text">
-                            @if(empty($presentacion))
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, deleniti ad itaque, corporis numquam modi nesciunt distinctio unde similique repellat enim quas, at ipsa? Officiis in nobis vitae aliquam mollitia.
-                            @else
-                            {{$presentacion[0]->mision}}
-                            @endif
-                        </p>
-                        <!-- Button -->
-                        <a href="#" class="btn btn-primary d-none">Button</a>
-
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 wow fadeInUp">
-                <div class="card z-depth-2" style="border-radius: 50px;opacity: 0.85;">
-                    <div class="card-body">
-
-                        <!-- Title -->
-                        <h4 class="card-title text-center">Visión</h4>
-                        <!-- Text -->
-                        <p class="card-text">
-                            @if(empty($presentacion))
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut accusantium eum assumenda fugit perspiciatis necessitatibus accusamus quos quasi. Officiis, suscipit amet doloremque in adipisci vel sapiente quos blanditiis beatae quam!
-                            @else
-                            {{$presentacion[0]->vision}}
-                            @endif
-                        </p>
-                        <!-- Button -->
-                        <a href="#" class="btn btn-primary d-none">Button</a>
-
-                    </div>
-                </div>
-            </div>
-
+    </tr>
+    @endforeach
+    @else
+                    <p>No hay Poryectos registrados</p>
+                    @endif
+  </tbody>
+</table>
         </div>
-
-
-
-        <livewire:servicio-front />
-
-        <div class="row p-lg-5 pb-5 align-items-center" id="objetivos">
-            <div class="col-12 my-4 wow fadeIn">
-                <h1 class="text-center font-weight-bold">Objetivos</h1>
-            </div>
-
-            <div class="col-md-6 mb-3">
-                <ul>
-                    @if($objetivos->count())
-                    @for($i=0; $i<($objetivos->count()/2); $i++ )
-                        <li class="my-2">{{$objetivos[$i]->objetivo}}</li>
-                        @endfor
-
-                        @endif
-                </ul>
-            </div>
-            <div class="col-md-6 mb-3">
-                <ul>
-                    @if($objetivos->count())
-                    @for($i=ceil($objetivos->count()/2); $i<$objetivos->count(); $i++ )
-                        <li class="my-2">{{$objetivos[$i]->objetivo}}</li>
-                        @endfor
-
-                        @endif
-                </ul>
-            </div>
-        </div>
-
-        <div class="row p-lg-5 pb-5 align-items-center" style="background-color: #b43432;" id="valores">
-            <div class="col-12 my-4 wow fadeIn">
-                <h1 class="text-center font-weight-bold white-text">Valores</h1>
-            </div>
-
-            <div class="col-md-6 mb-3 white-text">
-                <ul>
-                    @if($valores->count())
-                    @for($i=0; $i<($valores->count()/2); $i++ )
-                        <li class="my-2">{{$valores[$i]->valor}}</li>
-                        @endfor
-
-                        @endif
-                </ul>
-            </div>
-            <div class="col-md-6 mb-3 white-text">
-                <ul>
-                    @if($valores->count())
-                    @for($i=ceil($valores->count()/2); $i<$valores->count(); $i++ )
-                        <li class="my-2">{{$valores[$i]->valor}}</li>
-                        @endfor
-
-                        @endif
-                </ul>
-            </div>
-        </div>
-
-    </div>
+        
     </div>
 
 
-    <div id="modal">
-
+    </div>
+                <div class="col">
+               
+                </div>
+            </div>
     </div>
 
     <!-- Footer -->

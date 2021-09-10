@@ -7,7 +7,7 @@
     <div class="col-md-4 mb-3">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">{{$serv->nombre}}</h5>
+                <h5 class="card-title text-center" >{{$serv->nombre}}</h5>
                 <p class="card-text">{{Str::limit($serv->descripcion, 230)}}</p>
                 <button class="btn btn-danger" type="button" wire:click="selected({{$serv->id}})" data-toggle="modal" data-target="#serviceModal">Ver Mas</button>
             </div>
@@ -21,7 +21,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     @if($servicio)
-                    <h5 class="modal-title" id="exampleModalLabel">{{$servicio->nombre}}</h5>
+                    <h3 class="modal-title" id="exampleModalLabel">{{$servicio->nombre}}</h3>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -32,11 +32,11 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-12">
-                                <h3>Descripcion:</h3>
+                                <h4>Descripción:</h4>
                                 <p>{{$servicio->descripcion}}</p>
                             </div>
                             <div class="col-12">
-                                <h3>Componentes:</h3>
+                                <h4>Componentes:</h4>
                                 <ul class="list-group">
                                     @foreach($servicio->componentes as $comp)
                                     <il class="list-group-item">{{$comp->componente}}</il>

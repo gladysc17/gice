@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Investigador;
 use Illuminate\Http\Request;
+use App\Models\Contacto;
 
 class InvestigadorController extends Controller
 {
@@ -14,7 +15,10 @@ class InvestigadorController extends Controller
      */
     public function index()
     {
-        //
+        $investigador = Investigador::all();
+        $contacto = Contacto::first();
+
+        return view ('cliente.investigador', ['contacto' => $contacto, 'investigador'=> $investigador]);
     }
 
     /**

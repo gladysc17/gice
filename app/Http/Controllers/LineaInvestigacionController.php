@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\LineaInvestigacion;
 use Illuminate\Http\Request;
+use App\Models\Contacto;
 
 class LineaInvestigacionController extends Controller
 {
@@ -14,7 +15,10 @@ class LineaInvestigacionController extends Controller
      */
     public function index()
     {
-        //
+        $linea = LineaInvestigacion::all();
+        $contacto = Contacto::first();
+
+        return view ('cliente.linea', ['contacto' => $contacto, 'linea'=> $linea]);
     }
 
     /**

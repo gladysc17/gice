@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Evento;
+use App\Models\Red;
 use Illuminate\Http\Request;
 use App\Models\Contacto;
 
-class EventoController extends Controller
+class RedController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +15,10 @@ class EventoController extends Controller
      */
     public function index()
     {
-        $evento = Evento::all();
+        $red = Red::all();
         $contacto = Contacto::first();
 
-        return view ('cliente.evento', ['contacto' => $contacto, 'evento'=> $evento]);
+        return view ('cliente.red', ['contacto' => $contacto, 'red'=> $red]);
     }
 
     /**
@@ -45,10 +45,10 @@ class EventoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Evento  $evento
+     * @param  \App\Models\Red  $red
      * @return \Illuminate\Http\Response
      */
-    public function show(Evento $evento)
+    public function show(Red $red)
     {
         //
     }
@@ -56,10 +56,10 @@ class EventoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Evento  $evento
+     * @param  \App\Models\Red  $red
      * @return \Illuminate\Http\Response
      */
-    public function edit(Evento $evento)
+    public function edit(Red $red)
     {
         //
     }
@@ -68,10 +68,10 @@ class EventoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Evento  $evento
+     * @param  \App\Models\Red  $red
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Evento $evento)
+    public function update(Request $request, Red $red)
     {
         //
     }
@@ -79,10 +79,10 @@ class EventoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Evento  $evento
+     * @param  \App\Models\Red  $red
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Evento $evento)
+    public function destroy(Red $red)
     {
         //
     }

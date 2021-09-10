@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Evento;
+use App\Models\Proyecto;
 use Illuminate\Http\Request;
 use App\Models\Contacto;
 
-class EventoController extends Controller
+class ProyectoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +15,10 @@ class EventoController extends Controller
      */
     public function index()
     {
-        $evento = Evento::all();
+        $proyecto = Proyecto::all();
         $contacto = Contacto::first();
 
-        return view ('cliente.evento', ['contacto' => $contacto, 'evento'=> $evento]);
+        return view ('cliente.proyecto', ['contacto' => $contacto, 'proyecto'=> $proyecto]);
     }
 
     /**
@@ -45,10 +45,10 @@ class EventoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Evento  $evento
+     * @param  \App\Models\Proyecto  $proyecto
      * @return \Illuminate\Http\Response
      */
-    public function show(Evento $evento)
+    public function show(Proyecto $proyecto)
     {
         //
     }
@@ -56,10 +56,10 @@ class EventoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Evento  $evento
+     * @param  \App\Models\Proyecto  $proyecto
      * @return \Illuminate\Http\Response
      */
-    public function edit(Evento $evento)
+    public function edit(Proyecto $proyecto)
     {
         //
     }
@@ -68,10 +68,10 @@ class EventoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Evento  $evento
+     * @param  \App\Models\Proyecto  $proyecto
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Evento $evento)
+    public function update(Request $request, Proyecto $proyecto)
     {
         //
     }
@@ -79,10 +79,10 @@ class EventoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Evento  $evento
+     * @param  \App\Models\Proyecto  $proyecto
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Evento $evento)
+    public function destroy(Proyecto $proyecto)
     {
         //
     }

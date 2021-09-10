@@ -2,6 +2,12 @@
 
 use App\Http\Controllers\FrontController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SemilleroController;
+use App\Http\Controllers\ProyectoController;
+use App\Http\Controllers\RedController;
+use App\Http\Controllers\EventoController;
+use App\Http\Controllers\InvestigadorController;
+use App\Http\Controllers\LineaInvestigacionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,6 +62,25 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/evento', function () {
         return view('evento');
     });
+    Route::get('/proyecto', function () {
+        return view('proyecto');
+    });
+    Route::get('/red', function () {
+        return view('red');
+    });
 });
 
-Route::get('/sample', [FrontController::class, 'index']);
+Route::get('/index', [FrontController::class, 'index']);
+
+Route::resource('semillero', SemilleroController::class);
+
+Route::resource('proyecto', ProyectoController::class);
+
+Route::resource('red', RedController::class);
+
+Route::resource('evento', EventoController::class);
+
+Route::resource('investigador', InvestigadorController::class);
+
+Route::resource('linea', LineaInvestigacionController::class);
+

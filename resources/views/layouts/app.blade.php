@@ -37,6 +37,42 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Presentación</a>
+
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{url('admin/presentacion')}}">Misión & Visión</a>
+                            <a class="dropdown-item" href="{{url('admin/objetivo')}}">Objetivos</a>
+                            <a class="dropdown-item" href="{{url('admin/valor')}}">Valores</a>
+                            <a class="dropdown-item" href="#">Imagen corporativa</a>
+                            <a class="dropdown-item" href="{{url('admin/linea')}}">Lineas de Investigación</a>
+                            <a class="dropdown-item" href="{{url('admin/investigador')}}">Investigadores</a>
+                            <a class="dropdown-item" href="{{url('admin/servicio')}}">Servicios</a>
+                            <a class="dropdown-item" href="{{url('admin/contacto')}}">Contacto</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url('admin/proyecto')}}">Proyectos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url('admin/red')}}">Redes</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url('admin/evento')}}">Eventos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Publicaciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Recopilación paneles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url('admin/semillero')}}">Semilleros</a>
+                    </li>
+
 
                     </ul>
 

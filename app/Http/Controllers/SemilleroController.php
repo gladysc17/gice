@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Semillero;
 use Illuminate\Http\Request;
+use App\Models\Contacto;
 
 class SemilleroController extends Controller
 {
@@ -14,7 +15,12 @@ class SemilleroController extends Controller
      */
     public function index()
     {
-        //
+        $semillero = Semillero::all();
+        $contacto = Contacto::first();
+
+        return view ('cliente.semillero', ['contacto' => $contacto, 'semillero'=> $semillero]);
+
+        
     }
 
     /**

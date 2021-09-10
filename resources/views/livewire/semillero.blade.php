@@ -1,7 +1,7 @@
 <div>
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Contacto</h3>
+            <h3 class="card-title">Semillero</h3>
         </div>
         <!-- /.card-header -->
         <div class="card-body">
