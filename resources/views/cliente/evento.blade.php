@@ -26,7 +26,7 @@
         <div class="container">
             <div class="row align-items-center">
             <div class="col-2">
-                    <a  href="{{url('index')}}"> <img src="/img/gincus.png" alt="" class="img-fluid" title="LOGO GINCUS"> </a>
+                    <a  href="{{url('/')}}"> <img src="/img/gincus.png" alt="" class="img-fluid" title="LOGO GINCUS"> </a>
                 </div>
                 <div class="col-6">
                     <h1 class="h1">GINCUS</h1>
@@ -57,13 +57,13 @@
                     PRESENTACIÓN</a>
 
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{url('index#presentacion')}}">Misión & Visión</a>
-                        <a class="dropdown-item" href="{{url('index#objetivos')}}">Objetivos</a>
-                        <a class="dropdown-item" href="{{url('index#valores')}}">Valores</a>
+                        <a class="dropdown-item" href="{{url('/#presentacion')}}">Misión & Visión</a>
+                        <a class="dropdown-item" href="{{url('/#objetivos')}}">Objetivos</a>
+                        <a class="dropdown-item" href="{{url('/#valores')}}">Valores</a>
                         <a class="dropdown-item" href="#">Imagen corporativa</a>
                         <a class="dropdown-item" href="{{url('linea')}}">Lineas de Investigación</a>
                         <a class="dropdown-item" href="{{url('investigador')}}">Investigadores</a>
-                        <a class="dropdown-item" href="{{url('index#servicios')}}">Servicios</a>
+                        <a class="dropdown-item" href="{{url('/#servicios')}}">Servicios</a>
                         <a class="dropdown-item" href="#">Contacto</a>
                     </div>
                 </li>

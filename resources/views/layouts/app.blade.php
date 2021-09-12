@@ -26,6 +26,7 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+            @auth
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -112,6 +113,7 @@
                     </ul>
                 </div>
             </div>
+            @endauth
         </nav>
 
         <main class="py-4">

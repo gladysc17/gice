@@ -19,11 +19,11 @@ use App\Http\Controllers\LineaInvestigacionController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/*
 Route::get('/', function () {
     return view('welcome');
 });
-
+*/
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -70,7 +70,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     });
 });
 
-Route::get('/index', [FrontController::class, 'index']);
+Route::get('/', [FrontController::class, 'index']);
 
 Route::resource('semillero', SemilleroController::class);
 

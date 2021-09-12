@@ -26,7 +26,7 @@
         <div class="container">
             <div class="row align-items-center">
             <div class="col-2">
-                    <a  href="{{url('index')}}"> <img src="/img/gincus.png" alt="" class="img-fluid" title="LOGO GINCUS"> </a>
+                    <a  href="{{url('/')}}"> <img src="/img/gincus.png" alt="" class="img-fluid" title="LOGO GINCUS"> </a>
                 </div>
                 <div class="col-6">
                     <h1 class="h1">GINCUS</h1>
@@ -43,7 +43,7 @@
 
 
     <nav class="navbar sticky-top navbar-expand-lg text-center navbar-dark danger-color-dark animated fadeInUp slow">
-        <a class="navbar-brand" href="{{url('index')}}"> <img src="/img/gincus.png" height="50" alt="mdb logo"> 
+        <a class="navbar-brand" href="{{url('/')}}"> <img src="/img/gincus.png" height="50" alt="mdb logo"> 
             <strong>GINCUS</strong>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -88,6 +88,13 @@
                     <a class="nav-link" href="{{url('semillero')}}">SEMILLEROS</a>
                 </li>
             </ul>
+
+            <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                    <a class="nav-link" href="{{url('login')}}">Login</a>
+                </li>
+            </ul>
+
         </div>
     </nav>
     <!--Carousel Wrapper-->
