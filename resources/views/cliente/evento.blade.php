@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GINCUS</title>
+    <title>GICE</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Font Awesome -->
@@ -26,11 +26,11 @@
         <div class="container">
             <div class="row align-items-center">
             <div class="col-2">
-                    <a  href="{{url('/')}}"> <img src="/img/gincus.png" alt="" class="img-fluid" title="LOGO GINCUS"> </a>
+                    <a  href="{{url('/')}}"> <img src="/img/gice.png" alt="" class="img-fluid" title="LOGO GICE"> </a>
                 </div>
                 <div class="col-6">
-                    <h1 class="h1">GINCUS</h1>
-                    <h4 class="h4"> Grupo de Investigación Para el Cuidado de la Salud - UFPS</h4>
+                    <h1 class="h1">GICE</h1>
+                    <h4 class="h4"> Grupo de Investigación de Cuidado de Enfermería</h4>
                 </div>
 
                 <div class="col-lg-4 ml-auto ">
@@ -44,8 +44,8 @@
 
     <nav class="navbar sticky-top navbar-expand-lg text-center navbar-dark danger-color-dark animated fadeInUp slow">
         <a class="navbar-brand" href="#">
-            <img src="/img/gincus.png" height="50" alt="mdb logo">
-            <strong>GINCUS</strong>
+            <img src="/img/gice.png" height="50" alt="mdb logo">
+            <strong>GICE</strong>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -111,29 +111,24 @@
 
     <div class="container-fluid">
         <div class="row">
-        <table class="table">
+        <table class="table table-responsive">
+        @if(count($evento))
+            @foreach($evento as $eve)
             <thead>
                 <tr>
-                <th scope="col">Nombre</th>
-                <th scope="col">Lema</th>
-                <th scope="col">Fecha</th>
-                <th scope="col">Lugar</th>
-                <th scope="col">Tipo</th>
-                <th scope="col">Afiche</th>
-                <th scope="col">Memorias</th>
+                <td colspan="6"><h3>{{$eve->nombre}}<h3></td>
                 </tr>
             </thead>
             <tbody>
-            @if(count($evento))
-            @foreach($evento as $eve)
+            
                 <tr>
-                <th scope="row">{{$eve->nombre}}</th>
-                <td>{{$eve->lema}}</td>
-                <td>{{$eve->fecha}}</td>
-                <td>{{$eve->lugar}}</td>
-                <td>{{$eve->tipo}}</td>
-                <td>{{$eve->afiche}}</td>
-                <td>{{$eve->memorias}}</td>
+                    <td><p> <td><img src="{{asset('img/'.$eve->afiche.'.png')}}" width="320" height="380" class="img-fluid" title="LOGO"></td></p></td>
+                    <td>
+                        <p> Lema: {{$eve->lema}}</p>
+                        <p> Fecha: {{$eve->fecha}}</p>
+                        <p> Lugar: {{$eve->lugar}}</p>
+                        <p> Tipo: {{$eve->tipo}}</p>
+                    </td>
                 </tr>
             @endforeach
             @else

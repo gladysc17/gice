@@ -26,11 +26,11 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-2">
-                    <a  href="{{url('/')}}"> <img src="/img/gincus.png" alt="" class="img-fluid" title="LOGO GINCUS"> </a>
+                    <a  href="{{url('/')}}"> <img src="/img/gice.png" alt="" class="img-fluid" title="LOGO GICE"> </a>
                 </div>
                 <div class="col-6">
-                    <h1 class="h1">GINCUS</h1>
-                    <h4 class="h4"> Grupo de Investigación Para el Cuidado de la Salud - UFPS</h4>
+                    <h1 class="h1">GICE</h1>
+                    <h4 class="h4"> Grupo de Investigación de Cuidado de Enfermería</h4>
                 </div>
 
                 <div class="col-lg-4 ml-auto ">
@@ -44,8 +44,8 @@
 
     <nav class="navbar sticky-top navbar-expand-lg text-center navbar-dark danger-color-dark animated fadeInUp slow">
         <a class="navbar-brand" href="#">
-            <img src="/img/gincus.png" height="50" alt="mdb logo">
-            <strong>GINCUS</strong>
+            <img src="/img/gice.png" height="50" alt="mdb logo">
+            <strong>GICE</strong>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

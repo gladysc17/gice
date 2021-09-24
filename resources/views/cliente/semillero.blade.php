@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GINCUS</title>
+    <title>GICE</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Font Awesome -->
@@ -26,11 +26,11 @@
         <div class="container">
             <div class="row align-items-center">
             <div class="col-2">
-                    <a  href="{{url('/')}}"> <img src="/img/gincus.png" alt="" class="img-fluid" title="LOGO GINCUS"> </a>
+                    <a  href="{{url('/')}}"> <img src="/img/gice.png" alt="" class="img-fluid" title="LOGO GICE"> </a>
                 </div>
                 <div class="col-6">
-                    <h1 class="h1">GINCUS</h1>
-                    <h4 class="h4"> Grupo de Investigación Para el Cuidado de la Salud - UFPS</h4>
+                    <h1 class="h1">GICE</h1>
+                    <h4 class="h4"> Grupo de Investigación de Cuidado de Enfermería</h4>
                 </div>
 
                 <div class="col-lg-4 ml-auto ">
@@ -44,8 +44,8 @@
 
     <nav class="navbar sticky-top navbar-expand-lg text-center navbar-dark danger-color-dark animated fadeInUp slow">
         <a class="navbar-brand" href="#">
-            <img src="/img/gincus.png" height="50" alt="mdb logo">
-            <strong>GINCUS</strong>
+            <img src="/img/gice.png" height="50" alt="mdb logo">
+            <strong>GICE</strong>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -117,23 +117,31 @@
 
                     <div class="container-fluid">
                         <div class="row">
-                        <table class="table">
+                        <table class="table table-responsive">
                             <thead>
-                                <tr>
-                                <th scope="col">Nombre</th>
-                                <th scope="col">Director</th>
-                                <th scope="col">Correo</th>
-                                <th scope="col">Caracteristicas</th>
+                                <tr style="text-align: center">
+                                    <th scope="col">Semillero </th>
+                                    <th scope="col">Caracteristicas</th>
                                 </tr>
                             </thead>
                             <tbody>
                             @if(count($semillero))
                             @foreach($semillero as $sem)
-                                <tr>
-                                <th scope="row">{{$sem->nombre}}</th>
-                                <td>{{$sem->director}}</td>
-                                <td>{{$sem->correo}}</td>
-                                <td>{{$sem->caracteristicas}}</td>
+                                <tr >
+                                    <th style="text-align: center">
+                                            <h4> {{$sem->sigla}} </h4>
+                                            <h5> {{$sem->nombre}} </h5>
+                                            <img src="{{asset('img/'.$sem->logo.'.png')}}" alt="" class="img-fluid" title="LOGO">
+                                    </th>
+
+                                    <th style="text-align: justify"> 
+                                        <h5>Fecha de creación: </h5> <p> {{$sem->fechacreacion}} </p>
+                                        <h5>Objeto: </h5> <p>{{$sem->objeto}} </p>
+                                        <h5>Director: </h5> <p>{{$sem->director}} </p>
+                                        <h5>Correo: </h5> <p>{{$sem->correo}} </p>
+                                        <h5>Actividades destacadas: </h5><p>{{$sem->caracteristicas}} </p>
+                                    </th>
+
                                 </tr>
                             @endforeach
                             @else

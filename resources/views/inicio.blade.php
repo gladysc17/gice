@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GINCUS</title>
+    <title>GICE</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Font Awesome -->
@@ -26,11 +26,11 @@
         <div class="container">
             <div class="row align-items-center">
             <div class="col-2">
-                    <a  href="{{url('/')}}"> <img src="/img/gincus.png" alt="" class="img-fluid" title="LOGO GINCUS"> </a>
+                    <a  href="{{url('/')}}"> <img src="/img/gice.png" alt="" class="img-fluid" title="LOGO GICE"> </a>
                 </div>
                 <div class="col-6">
-                    <h1 class="h1">GINCUS</h1>
-                    <h4 class="h4"> Grupo de Investigación Para el Cuidado de la Salud - UFPS</h4>
+                    <h1 class="h1">GICE</h1>
+                    <h4 class="h4"> Grupo de Investigación de Cuidado de Enfermería</h4>
                 </div>
 
                 <div class="col-lg-4 ml-auto ">
@@ -43,8 +43,8 @@
 
 
     <nav class="navbar sticky-top navbar-expand-lg text-center navbar-dark danger-color-dark animated fadeInUp slow">
-        <a class="navbar-brand" href="{{url('/')}}"> <img src="/img/gincus.png" height="50" alt="mdb logo"> 
-            <strong>GINCUS</strong>
+        <a class="navbar-brand" href="{{url('/')}}"> <img src="/img/gice.png" height="50" alt="mdb logo"> 
+            <strong>GICE</strong>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -110,17 +110,17 @@
         <div class="carousel-inner" role="listbox">
             <!--First slide-->
             <div class="carousel-item active">
-                <img class="d-block w-100" src="https://picsum.photos/1280/540" alt="First slide">
+                <img class="d-block w-100" src="/img/fachada.png" alt="First slide">
             </div>
             <!--/First slide-->
             <!--Second slide-->
             <div class="carousel-item">
-                <img class="d-block w-100" src="https://picsum.photos/1280/540" alt="Second slide">
+                <img class="d-block w-100" src="/img/foto1.png" alt="Second slide">
             </div>
             <!--/Second slide-->
             <!--Third slide-->
             <div class="carousel-item">
-                <img class="d-block w-100" src="https://picsum.photos/1280/540" alt="Third slide">
+                <img class="d-block w-100" src="/img/portadaa.png" alt="Third slide">
             </div>
             <!--/Third slide-->
         </div>
@@ -313,11 +313,11 @@
             <p>Siguenos:</p>
             <section>
                 <!-- Facebook -->
-                <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/camaracucuta" role="button" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/Ufps.edu.co" role="button" target="_blank"><i class="fab fa-facebook-f"></i></a>
                 <!-- Twitter -->
-                <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com/cccucuta" role="button" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com/UFPSCUCUTA" role="button" target="_blank"><i class="fab fa-twitter"></i></a>
                 <!-- Instagram -->
-                <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/camaracucuta/" role="button" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/ufpscucuta" role="button" target="_blank"><i class="fab fa-instagram"></i></a>
             </section>
             <!-- Section: Social media -->
         </div>

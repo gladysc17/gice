@@ -10,7 +10,11 @@ class Semillero extends Model
     use HasFactory;
 
     protected $fillable = [
+        'sigla',
         'nombre',
+        'fechacreacion',
+        'objeto',
+        'logo',
         'director',
         'correo',
         'caracteristicas',

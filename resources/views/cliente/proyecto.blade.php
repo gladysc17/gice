@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GINCUS</title>
+    <title>GICE</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Font Awesome -->
@@ -26,11 +26,11 @@
         <div class="container">
             <div class="row align-items-center">
             <div class="col-2">
-                    <a  href="{{url('/')}}"> <img src="/img/gincus.png" alt="" class="img-fluid" title="LOGO GINCUS"> </a>
+                    <a  href="{{url('/')}}"> <img src="/img/gice.png" alt="" class="img-fluid" title="LOGO GICE"> </a>
                 </div>
                 <div class="col-6">
-                    <h1 class="h1">GINCUS</h1>
-                    <h4 class="h4"> Grupo de Investigación Para el Cuidado de la Salud - UFPS</h4>
+                    <h1 class="h1">GICE</h1>
+                    <h4 class="h4"> Grupo de Investigación de Cuidado de Enfermería</h4>
                 </div>
 
                 <div class="col-lg-4 ml-auto ">
@@ -44,8 +44,8 @@
 
     <nav class="navbar sticky-top navbar-expand-lg text-center navbar-dark danger-color-dark animated fadeInUp slow">
         <a class="navbar-brand" href="#">
-            <img src="/img/gincus.png" height="50" alt="mdb logo">
-            <strong>GINCUS</strong>
+            <img src="/img/gice.png" height="50" alt="mdb logo">
+            <strong>GICE</strong>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -113,35 +113,73 @@
 
     <div class="container-fluid">
         <div class="row">
-        <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Nombre</th>
-      <th scope="col">Descripcion</th>
-    </tr>
-  </thead>
-  <tbody>
-  @if(count($proyecto))
-  @foreach($proyecto as $pro)
-    <tr>
-      <th scope="row">{{$pro->nombre}}</th>
-      <td>{{$pro->descripcion}}</td>
+        <table class="table table-responsive">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Caracteristicas</th>
+                </tr>
+            </thead>
+            <tbody>
+            @if(count($proyecto))
+            @foreach($proyecto as $pro)
+                <tr>
+                    
+                    <th style="text-align: center">
+                        <h4> {{$pro->nombre}} </h4>
+                        <img src="{{asset('img/'.$pro->logo.'.png')}}"  class="img-fluid" title="LOGO">
+                    </th>
+                    
+                    <th> 
 
-    </tr>
-    @endforeach
-    @else
-                    <p>No hay Poryectos registrados</p>
-                    @endif
-  </tbody>
-</table>
+                    <h5>Descripción: </h5><p>{{$pro->descripcion}}</p>
+                    <h5>Ejes de trabajo: </h5>
+                        <p> 
+                            <ul class="list-group">
+                                @foreach($pro->ejeProyecto as $eje)
+                                <il>• {{$eje->eje}}</il>
+                                @endforeach
+                            </ul>
+                        </p>
+                    <h5>Objetivos: </h5>
+                        <p>
+                            <ul class="list-group">
+                                @foreach($pro->objetivoProyecto as $obj)
+                                <il>• {{$obj->objetivo}}</il>
+                                @endforeach
+                            </ul>
+                        </p>
+                    <h5>Resultados esperados: </h5>
+                        <p>
+                            <ul class="list-group">
+                                @foreach($pro->resultados as $resu)
+                                <il>• {{$resu->resultado}}</il>
+                                @endforeach
+                            </ul>
+                        </p>
+                    <h5>Responsables: </h5>
+                        <p>
+                            <ul class="list-group">
+                                @foreach($pro->responsables as $res)
+                                <il>• {{$res->responsable}}</il>
+                                @endforeach
+                            </ul>
+                        </p>
+                    </th>
+                </tr>
+                @endforeach
+                @else
+                                <p>No hay Proyectos registrados</p>
+                                @endif
+            </tbody>
+        </table>
         </div>
         
     </div>
 
-
     </div>
                 <div class="col">
-               
+                
                 </div>
             </div>
     </div>
