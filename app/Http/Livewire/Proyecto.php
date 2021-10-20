@@ -162,7 +162,7 @@ class Proyecto extends Component
             if (array_key_exists('id', $obj)) {
                 objetives::find($obj['id'])->update(['objetivo' => $obj['objetivo']]);
             } else {
-                $this->editObjetivo->objetivoProyecto()->create([
+                $this->editProyecto->objetivoProyecto()->create([
                     'objetivo' => $obj['objetivo'],
                 ]);
             }

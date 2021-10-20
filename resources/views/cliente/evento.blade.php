@@ -124,10 +124,10 @@
                 <tr>
                     <td><p> <td><img src="{{asset('img/'.$eve->afiche.'.png')}}" width="320" height="380" class="img-fluid" title="LOGO"></td></p></td>
                     <td>
-                        <p> Lema: {{$eve->lema}}</p>
-                        <p> Fecha: {{$eve->fecha}}</p>
-                        <p> Lugar: {{$eve->lugar}}</p>
-                        <p> Tipo: {{$eve->tipo}}</p>
+                        <p> <b>Lema:</b> {{$eve->lema}}</p>
+                        <p> <b>Fecha:</b>{{$eve->fecha}}</p>
+                        <p> <b>Lugar:</b> {{$eve->lugar}}</p>
+                        <p> <b>Tipo:</b> {{$eve->tipo}}</p>
                     </td>
                 </tr>
             @endforeach
