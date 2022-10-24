@@ -15,8 +15,9 @@ class EventoController extends Controller
      */
     public function index()
     {
-        $evento = Evento::all();
+        $evento = Evento::orderByDesc('id')->get();
         $contacto = Contacto::first();
+
 
         return view ('cliente.evento', ['contacto' => $contacto, 'evento'=> $evento]);
     }
