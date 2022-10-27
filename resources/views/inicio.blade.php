@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GICE</title>
+    <title>GINCUS</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Font Awesome -->
@@ -79,7 +79,7 @@
                     <a class="nav-link" href="{{url('evento')}}">EVENTOS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">PUBLICACIONES</a>
+                    <a class="nav-link" href="{{url('publicacion')}}">PUBLICACIONES</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">RECOPILACIÓN PANELES</a>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GICE</title>
+    <title>GINCUS</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Font Awesome -->
@@ -15,8 +15,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.11.0/css/mdb.min.css" rel="stylesheet">
-    <meta name="description" content="GICE">
-    <meta name="keywords" content="GICE">
+    <meta name="description" content="GINCUS">
+    <meta name="keywords" content="GINCUS">
     {{--<link rel="stylesheet" href="css/style.css">--}}
     @livewireStyles
 </head>
@@ -26,11 +26,11 @@
         <div class="container">
             <div class="row align-items-center">
             <div class="col-2">
-                    <a  href="{{url('/')}}"> <img src="/img/gice.png" alt="" class="img-fluid" title="LOGO GICE"> </a>
+                    <a  href="{{url('/')}}"> <img src="/img/gincus.png" alt="" class="img-fluid" title="LOGO GICE"> </a>
                 </div>
                 <div class="col-6">
-                    <h1 class="h1">GICE</h1>
-                    <h4 class="h4"> Grupo de Investigación de Cuidado de Enfermería</h4>
+                    <h1 class="h1">GINCUS</h1>
+                    <h4 class="h4"> Grupo de Investigación para el cuidado de la Salud </h4>
                 </div>
 
                 <div class="col-lg-4 ml-auto ">
@@ -44,8 +44,8 @@
 
     <nav class="navbar sticky-top navbar-expand-lg text-center navbar-dark danger-color-dark animated fadeInUp slow">
         <a class="navbar-brand" href="#">
-            <img src="/img/gice.png" height="50" alt="mdb logo">
-            <strong>GICE</strong>
+            <img src="/img/gincus.png" height="50" alt="mdb logo">
+            <strong>GINCUS</strong>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -79,7 +79,7 @@
                     <a class="nav-link" href="{{url('evento')}}">EVENTOS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">PUBLICACIONES</a>
+                    <a class="nav-link" href="{{url('publicacion')}}">PUBLICACIONES</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">RECOPILACIÓN PANELES</a>

@@ -36,7 +36,7 @@
                         <td>{{$pro->objetivoProyecto->count()}}</td>
                         <td>{{$pro->responsables->count()}}</td>
                         <td>{{$pro->resultados->count()}}</td>
-                        
+            
 
                         <td>
                             <button class="btn btn-warning" type="button" wire:click="edit({{$pro->id}})" data-toggle="modal" data-target="#editarProyecto">Editar</button>

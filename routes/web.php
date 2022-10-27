@@ -8,6 +8,7 @@ use App\Http\Controllers\RedController;
 use App\Http\Controllers\EventoController;
 use App\Http\Controllers\InvestigadorController;
 use App\Http\Controllers\LineaInvestigacionController;
+use App\Http\Controllers\PublicacionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -68,6 +69,9 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/red', function () {
         return view('red');
     });
+    Route::get('/publicacion', function () {
+        return view('publicacion');
+    });
 });
 
 Route::get('/', [FrontController::class, 'index']);
@@ -83,4 +87,6 @@ Route::resource('evento', EventoController::class);
 Route::resource('investigador', InvestigadorController::class);
 
 Route::resource('linea', LineaInvestigacionController::class);
+
+Route::resource('publicacion', PublicacionController::class);
 

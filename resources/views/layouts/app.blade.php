@@ -65,7 +65,7 @@
                         <a class="nav-link" href="{{url('admin/evento')}}">Eventos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">Publicaciones</a>
+                        <a class="nav-link" href="{{url('admin/publicacion')}}">Publicaciones</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="">Recopilación paneles</a>
