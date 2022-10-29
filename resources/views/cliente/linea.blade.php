@@ -25,12 +25,12 @@
     <header class="py-4 animated fadeInUp d-none d-lg-block" style="background-image: url('{{ asset('img/header-superior-principal.jpg') }}'); background-attachment: fixed;">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-2">
+            <div class="col-2">
                     <a  href="{{url('/')}}"> <img src="/img/gincus.png" alt="" class="img-fluid" title="LOGO GICE"> </a>
                 </div>
                 <div class="col-6">
                     <h1 class="h1">GINCUS</h1>
-                    <h4 class="h4"> Grupo de Investigación para el cuidado de la Salud</h4>
+                    <h4 class="h4"> Grupo de Investigación para el cuidado de la Salud </h4>
                 </div>
 
                 <div class="col-lg-4 ml-auto ">
@@ -57,7 +57,7 @@
                     PRESENTACIÓN</a>
 
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{url('/#presentacion')}}">Misión & Visión</a>
+                        <a class="dropdown-item" href="{{url('/#presentacion')}}">Misión & Visión</a>
                         <a class="dropdown-item" href="{{url('/#objetivos')}}">Objetivos</a>
                         <a class="dropdown-item" href="{{url('/#valores')}}">Valores</a>
                         <a class="dropdown-item" href="#">Imagen corporativa</a>
@@ -79,7 +79,7 @@
                     <a class="nav-link" href="{{url('evento')}}">EVENTOS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{url('publicacion')}}">PUBLICACIONES</a>
+                <a class="nav-link" href="{{url('publicacion')}}">PUBLICACIONES</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">RECOPILACIÓN PANELES</a>
@@ -91,75 +91,71 @@
         </div>
     </nav>
 
-    <div class="container" style='margin: 20px; padding: 50px;'>
-  
-    <div class="row">
-        <div class="col">
-        
-        </div>
-        
-        <div class="col-10">
-        
 
-            <div class="col-md-12 col-sm-12 col-xs-12" style="border-bottom: 3px solid #aa1916;">
-                <div class="row">
-                    <div class="col-md-12">
-                            <h1 style="font-size: 30px;">
-                            <b>Líneas de Investigación</b></h1>
-                    </div>
-                </div>
-            </div>
-            
-                <div class="container-fluid">
+    
+    <div class="container">
+        <div class="row justify-content-md-center my-4">
+        <div class="col-md-12 col-sm-12 col-xs-12" style="border-bottom: 3px solid #aa1916;">
                     <div class="row">
-                        <table class="table">
-                            <thead >
-                                <tr>
-                                <th scope="col" class="text-center">Nombre</th>
-                                <th scope="col" class="text-center">Objetivo</th>
-                                <th scope="col" class="text-center">Logros</th>
-                                <th scope="col" class="text-center">Efectos</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @if(count($linea))
-                                @foreach($linea as $lin)
-                                    <tr>
-                                    <th scope="row">{{$lin->nombre}}</th>
-                                    <td>{{$lin->objetivo}}</td>
-                                    <td>
-                                        <ul class="list-group">
-                                            @foreach($lin->logros as $log)
-                                            <il>• {{$log->logro}}</il>
-                                            @endforeach
-                                        </ul>
-                                    </td>
-                                    <td>
-                                        <ul class="list-group">
-                                            @foreach($lin->efectos as $efe)
-                                            <il>• {{$efe->efecto}}</il>
-                                            @endforeach
-                                        </ul>
-                                    </td>
-                                    </tr>
-                                @endforeach
-                                @else
-                                <p>No hay lineas registrados</p>
-                                @endif
-                            </tbody>
-                        </table>
+                        <div class="col-md-12">
+                                <h1 style="font-size: 30px;">
+                                <b>Lineas de Investigacion</b></h1>
+                        </div>
                     </div>
                 </div>
-
-                </div>
-        <div class="col">
-                
+            <div class="col-md-12">
+                <div class="table-responsive">
+                <table class="table">
+                <thead>
+                    <tr>
+                    <th scope="col" class="text-center">Nombre</th>
+                    <th scope="col" class="text-center">Objetivo</th>
+                    <th scope="col" class="text-center">Logros</th>
+                    <th scope="col" class="text-center">Efectos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if(count($linea))
+                    @foreach($linea as $lin)
+                        <tr>
+                        <th scope="row">{{$lin->nombre}}</th>
+                        <td>{{$lin->objetivo}}</td>
+                        <td>
+                            <ul class="list-group">
+                                @foreach($lin->logros as $log)
+                                <il>• {{$log->logro}}</il>
+                                @endforeach
+                            </ul>
+                        </td>
+                        <td>
+                            <ul class="list-group">
+                                @foreach($lin->efectos as $efe)
+                                <il>• {{$efe->efecto}}</il>
+                                @endforeach
+                            </ul>
+                        </td>
+                        </tr>
+                    @endforeach
+                    @else
+                    <p>No hay lineas registrados</p>
+                    @endif
+                </tbody>
+            </table>
+                </div>        
+            
         </div>
-        </div>
+            </div>
+        
+        
     </div>
 
 
-
+    </div>
+                <div class="col">
+               
+                </div>
+            </div>
+    </div>
 
     <!-- Footer -->
     <footer class="page-footer font-small bg-dark text-white pt-4">

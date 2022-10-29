@@ -7,7 +7,7 @@
         <div class="card-body">
             <div class="d-flex flex-row-reverse my-3">
                 
-                <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#crearPublicacion">crear Publicacion</button>
+                <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#crearPublicacion" wire:click="resetValues()">crear Publicacion</button>
                
             </div>
 
@@ -33,7 +33,7 @@
                             <td>{{$publi->titulo}}</td>
                             <td>{{$publi->fecha}}</td>
                             <td>{{$publi->referencia}}</td>
-                            <td>{{$publi->link}}</td>
+                            <td> <a href="{{ asset('uploads').'/'.$publi->link}}" target="_blank">Ver PDF</a></td>
                             <td>
                                 <button class="btn btn-warning" type="button" wire:click="edit({{$publi->id}})" data-toggle="modal" data-target="#editPublicacion">Editar</button>
                                 <button class="btn btn-danger" type="button" onclick="confirm('Esta seguro de borrar la publicacion?') || event.stopImmediatePropagation()" wire:click="destroy({{$publi->id}})">Borrar</button>
@@ -80,14 +80,18 @@
                             <input type="text" class="form-control" name="referencia" aria-describedby="emailHelp" placeholder="Ingrese la referencia" required wire:model.defer="referencia">
                         </div>
                         <div class="form-group">
-                            <label for="url">Url:</label>
-                            <input type="text" class="form-control" id="url" aria-describedby="emailHelp" placeholder="Ingrese la url" required wire:model.defer="link">
+                            <div wire:loading wire:target="link">Uploading...</div>
+                            @if($link)
+                                PDF cargado correctamente
+                            @endif
+                            <label for="url">PDF:</label>
+                            <input type="file" class="form-control" id="url" accept=".pdf" aria-describedby="emailHelp" placeholder="Ingrese la url" required wire:model.defer="link">
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    <button type="submit" class="btn btn-primary" form="newPublicacion">Guardar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" wire:click="resetValues()">Cerrar</button>
+                    <button type="submit" class="btn btn-primary" form="newPublicacion" @if(!$link) disabled @endif>Guardar</button>
                 </div>
             </div>
         </div>
@@ -103,7 +107,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form id="editPublicacion" wire:submit.prevent="update">
+                    <form id="editPublicacionForm" wire:submit.prevent="update">
                         <div class="form-group">
                             <label for="tipologiaedit">Tipologia:</label>
                             <input type="text" class="form-control" id="tipologiaedit" aria-describedby="emailHelp" placeholder="Ingrese la tipologia" required wire:model.defer="tipologia">
@@ -121,14 +125,18 @@
                             <input type="text" class="form-control" id="referenciaedit" aria-describedby="emailHelp" placeholder="Ingrese la referencia" required wire:model.defer="referencia">
                         </div>
                         <div class="form-group">
-                            <label for="urledit">Url:</label>
-                            <input type="text" class="form-control" id="urledit" aria-describedby="emailHelp" placeholder="Ingrese la url" required wire:model.defer="link">
+                        <div wire:loading wire:target="link">Uploading...</div>
+                            @if($link)
+                                PDF cargado correctamente
+                            @endif
+                            <label for="urledit">PDF:</label>
+                            <input type="file" class="form-control" id="urledit" aria-describedby="emailHelp" accept=".pdf" placeholder="suba el pdf" required wire:model.defer="link">
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    <button type="submit" class="btn btn-primary" form="editPublicacion">Guardar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" wire:click="resetValues()">Cerrar</button>
+                    <button type="submit" class="btn btn-primary" form="editPublicacionForm" @if(!$link) disabled @endif>Guardar</button>
                 </div>
             </div>
         </div>
