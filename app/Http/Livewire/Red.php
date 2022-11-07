@@ -8,9 +8,12 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Red as re;
 use App\Models\ObjetivoRed as objetives;
 use App\Models\ActividadRed as activid;
+use Livewire\WithFileUploads;
+use Illuminate\Support\Facades\Storage;
 
 class Red extends Component
 {   
+    use WithFileUploads;
     public $red;
     public $nombre;
     public $descripcion;
@@ -20,6 +23,8 @@ class Red extends Component
     public $url;
     public $logo;
     public $editRed;
+    public $deleteUpdatedLogo;
+    public $editLogo;
 
     public $objetivoRed = [];
     public $deletedObjetivos = [];
@@ -61,6 +66,10 @@ class Red extends Component
 
     public function destroy($id)
     {
+        $deleteRed = re::find($id);
+        if (Storage::exists($deleteRed->logo)) {
+            Storage::delete($deleteRed->logo);
+        }
         re::destroy($id);       
         $this->emit('Red borrada');
     }
@@ -81,7 +90,9 @@ class Red extends Component
         $this->tipovinculo = $this->editRed->tipovinculo;
         $this->paisesprticipantes = $this->editRed->paisesprticipantes;
         $this->url = $this->editRed->url;
-        $this->logo = $this->editRed->logo;
+        //$this->editLogo = $this->editRed->logo;
+        $this->deleteUpdatedLogo = $this->editRed->logo;
+        $this->editLogo = $this->editRed->logo;
 
         foreach ($this->editRed->objetivoRed as $obj) {
             $this->objetivoRed[] = ['id' => $obj->id, 'objetivo' => $obj->objetivo];
@@ -95,6 +106,11 @@ class Red extends Component
 
     public function update()
     {
+        $path = $this->logo->store('imgs');
+
+        if (Storage::exists($this->deleteUpdatedLogo)) {
+            Storage::delete($this->deleteUpdatedLogo);
+        }
         $this->editRed->update([
             'nombre'=>$this->nombre,
             'descripcion'=>$this->descripcion,
@@ -102,7 +118,7 @@ class Red extends Component
             'tipovinculo'=>$this->tipovinculo,
             'paisesprticipantes'=>$this->paisesprticipantes,
             'url'=>$this->url,
-            'logo'=>$this->logo
+            'logo'=>$path
         ]);
 
         foreach ($this->deletedObjetivos as $obj) {
@@ -138,9 +154,10 @@ class Red extends Component
 
     public function save()
     {
+        $path = $this->logo->store('imgs');
         $reg = re::create(['nombre' => $this->nombre, 'descripcion'=> $this->descripcion,
         'aniocreacion'=> $this->aniocreacion, 'tipovinculo'=> $this->tipovinculo,
-        'paisesprticipantes'=> $this->paisesprticipantes, 'url'=> $this->url, 'logo'=> $this->logo]);
+        'paisesprticipantes'=> $this->paisesprticipantes, 'url'=> $this->url, 'logo'=> $path]);
 
         foreach ($this->objetivoRed as $obj) {
             $reg->objetivoRed()->create([
@@ -166,6 +183,10 @@ class Red extends Component
 
         unset($this->objetivoRed[$index]);
         $this->objetivoRed = array_values($this->objetivoRed);
+    }
+
+    public function resetValues(){
+        $this->reset(['red', 'nombre', 'descripcion', 'aniocreacion', 'tipovinculo', 'paisesprticipantes', 'url', 'logo']);
     }
 
     public function render()

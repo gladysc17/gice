@@ -29,7 +29,7 @@
                     
                     <th style="text-align: center">
                         <h4> {{$pro->nombre}} </h4>
-                        <img src="{{asset('img/'.$pro->logo.'.png')}}"  class="img-fluid" title="LOGO">
+                        <img src="{{ asset('uploads').'/'.$pro->logo}}" class="img-fluid">
                     </th>
                     
                     <th> 

@@ -29,7 +29,7 @@
                                     <th style="text-align: center">
                                             <h4> {{$sem->sigla}} </h4>
                                             <h5> {{$sem->nombre}} </h5>
-                                            <img src="{{asset('img/'.$sem->logo.'.png')}}" alt="" class="img-fluid" title="LOGO">
+                                            <img src="{{ asset('uploads').'/'.$sem->logo}}" class="img-fluid">
                                     </th>
 
                                     <th style="text-align: justify"> 

@@ -10,14 +10,19 @@ use App\Models\EjeProyecto as ejesito;
 use App\Models\Responsable as respons;
 use App\Models\ObjetivoProyecto as objetives;
 use App\Models\Resultado as results;
+use Livewire\WithFileUploads;
+use Illuminate\Support\Facades\Storage;
 
 class Proyecto extends Component
 {
+    use WithFileUploads;
     public $proyecto;
     public $nombre;
     public $logo;
+    public $editLogo;
     public $descripcion;
     public $editProyecto;
+    public $deleteUpdatedLogo;
 
     public $ejeProyecto = [];
     public $deletedEjes = [];
@@ -97,6 +102,10 @@ class Proyecto extends Component
 
     public function destroy($id)
     {
+        $deletePublicacion = pro::find($id);
+        if (Storage::exists($deletePublicacion->logo)) {
+            Storage::delete($deletePublicacion->logo);
+        }
         pro::destroy($id);       
         $this->emit('Proyecto borrado');
     }
@@ -117,8 +126,9 @@ class Proyecto extends Component
 
         $this->editProyecto = pro::find($id);
         $this->nombre = $this->editProyecto->nombre;
-        $this->logo = $this->editProyecto->logo;
+        $this->editLogo = $this->editProyecto->logo;
         $this->descripcion = $this->editProyecto->descripcion;
+        $this->deleteUpdatedLogo = $this->editProyecto->logo;
 
         foreach ($this->editProyecto->ejeProyecto as $ejep) {
             $this->ejeProyecto[] = ['id' => $ejep->id, 'eje' => $ejep->eje];
@@ -139,8 +149,13 @@ class Proyecto extends Component
     }
 
     public function update()
-    {
-        $this->editProyecto->update(['nombre' => $this->nombre,  'logo' => $this->logo,'descripcion' => $this->descripcion]);
+    {        
+        $path = $this->logo->store('imgs');
+
+        if (Storage::exists($this->deleteUpdatedLogo)) {
+            Storage::delete($this->deleteUpdatedLogo);
+        }
+        $this->editProyecto->update(['nombre' => $this->nombre,  'logo' => $path,'descripcion' => $this->descripcion]);
         
         foreach ($this->deletedEjes as $eje) {
             ejesito::destroy($eje['id']);
@@ -201,7 +216,8 @@ class Proyecto extends Component
 
     public function save()
     {
-        $proy = pro::create(['nombre' => $this->nombre, 'logo' => $this->logo, 'descripcion'=> $this->descripcion]);
+        $path = $this->logo->store('imgs');
+        $proy = pro::create(['nombre' => $this->nombre, 'logo' => $path, 'descripcion'=> $this->descripcion]);
         foreach ($this->ejeProyecto as $ejep) {
             $proy->ejeProyecto()->create([
                 'eje' => $ejep['eje'],
@@ -221,7 +237,7 @@ class Proyecto extends Component
             $proy->resultados()->create([
                 'resultado' => $resu['resultado'],
             ]);
-        }
+        }        
         
         $this->emit('Proyecto registrado');
         $this->reset();
@@ -266,6 +282,10 @@ class Proyecto extends Component
 
         unset($this->resultados[$index]);
         $this->resultados = array_values($this->resultados);
+    }
+
+    public function resetValues(){
+        $this->reset(['proyecto', 'logo', 'descripcion', 'nombre']);
     }
 
 

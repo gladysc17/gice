@@ -7,7 +7,7 @@
         <div class="card-body">
             <div class="d-flex flex-row-reverse my-3">
                 
-                <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#crearProyecto">Crear Proyecto</button>
+                <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#crearProyecto" wire:click="resetValues()">Crear Proyecto</button>
                
             </div>
             <table class="table table-bordered">
@@ -30,7 +30,7 @@
                     <tr>
                         <td>{{$loop->index + 1}}</td>
                         <td>{{$pro->nombre}}</td>
-                        <td>{{$pro->logo}}</td>
+                        <td><img src="{{ asset('uploads').'/'.$pro->logo}}" class="img-fluid"></td>
                         <td>{{$pro->descripcion}}</td>
                         <td>{{$pro->ejeProyecto->count()}}</td>
                         <td>{{$pro->objetivoProyecto->count()}}</td>
@@ -71,8 +71,13 @@
                             <input type="text" class="form-control" id="nombreProyecto" aria-describedby="emailHelp" placeholder="Ingrese el nombre" required wire:model.defer="nombre">
                         </div>
                         <div class="form-group">
+                        <div wire:loading wire:target="logo">Cargando Logo...</div>
+                        @if ($logo)
+                        <img class="img-fluid" src="{{ $logo->temporaryUrl()}}">
+                        Logo cargado correctamente
+                        @endif
                             <label for="logo">Logo:</label>
-                            <input type="text" class="form-control" id="logoProyecto" aria-describedby="emailHelp" placeholder="Ingrese el logo" required wire:model.defer="logo">
+                            <input type="file" class="form-control" id="logoProyecto" accept="image/*" aria-describedby="emailHelp" placeholder="Ingrese el logo" required wire:model.defer="logo">
                         </div>
                         <div class="form-group">
                             <label for="director">Descripción:</label>
@@ -178,8 +183,8 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    <button type="submit" class="btn btn-primary" form="newProyecto">Guardar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" wire:click="resetValues()">Cerrar</button>
+                    <button type="submit" class="btn btn-primary" form="newProyecto" @if(!$logo) disabled @endif>Guardar</button>
                 </div>
             </div>
         </div>
@@ -201,8 +206,17 @@
                             <input type="text" class="form-control" id="nombreedit" aria-describedby="emailHelp" placeholder="Ingrese el nombre" required wire:model.defer="nombre">
                         </div>
                         <div class="form-group">
+                        @if ($editLogo && is_null($logo))
+                        Previsualizacion del Logo:
+                        <img class="img-fluid" src="{{ asset('uploads').'/'.$editLogo}}">
+                        @endif
+                        @if ($logo)
+                        Previsualizacion del Logo:
+                        <img class="img-fluid" src="{{ $logo->temporaryUrl()}}">
+                        @endif
+                        <div wire:loading wire:target="logo">Cargando Logo...</div>
                             <label for="logoedit">Logo:</label>
-                            <input type="text" class="form-control" id="logoedit" aria-describedby="emailHelp" placeholder="Ingrese el logo" required wire:model.defer="logo">
+                            <input type="file" class="form-control" id="logoedit" aria-describedby="emailHelp" accept="image/*" placeholder="Ingrese el logo" required wire:model.defer="logo">
                         </div>
                         <div class="form-group">
                             <label for="descripcionedit">Descripción:</label>
@@ -308,8 +322,8 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    <button type="submit" class="btn btn-primary" form="editProyecto">Guardar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" wire:click="resetValues()">Cerrar</button>
+                    <button type="submit" class="btn btn-primary" form="editProyecto" @if(!$logo) disabled @endif>Guardar</button>
                 </div>
             </div>
         </div>

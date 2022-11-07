@@ -7,7 +7,7 @@
         <div class="card-body">
             <div class="d-flex flex-row-reverse my-3">
                 
-                <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#crearSemillero">Crear Semillero</button>
+                <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#crearSemillero" wire:click="resetValues()">Crear Semillero</button>
                
             </div>
 
@@ -36,7 +36,7 @@
                             <td>{{$semi->nombre}}</td>
                             <td>{{$semi->fechacreacion}}</td>
                             <td>{{$semi->objeto}}</td>
-                            <td>{{$semi->logo}}</td>
+                            <td><img src="{{ asset('uploads').'/'.$semi->logo}}" class="img-fluid"></td>
                             <td>{{$semi->director}}</td>
                             <td>{{$semi->correo}}</td>
                             <td>{{$semi->caracteristicas}}</td>
@@ -86,8 +86,13 @@
                             <textarea id="objeto" class="form-control" name="" rows="5" wire:model.defer="objeto" required></textarea>
                         </div>
                         <div class="form-group">
+                        <div wire:loading wire:target="logo">Cargando Logo...</div>
+                            @if ($logo)
+                            <img class="img-fluid" src="{{ $logo->temporaryUrl()}}">
+                            Logo cargado correctamente
+                            @endif
                             <label for="logo">Logo:</label>
-                            <input type="text" class="form-control" id="logoSemillero" aria-describedby="emailHelp" placeholder="Ingrese el logo" required wire:model.defer="logo">
+                            <input type="file" class="form-control" id="logoSemillero" aria-describedby="emailHelp" placeholder="Ingrese el logo" accept="image/*" required wire:model.defer="logo">
                         </div>
                         <div class="form-group">
                             <label for="director">Director:</label>
@@ -105,8 +110,8 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    <button type="submit" class="btn btn-primary" form="newSemillero">Guardar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" wire:click="resetValues()">Cerrar</button>
+                    <button type="submit" class="btn btn-primary" form="newSemillero" @if(!$logo) disabled @endif>Guardar</button>
                 </div>
             </div>
         </div>
@@ -137,15 +142,20 @@
                         </div>
                         <div class="form-group">
                             <label for="objetoedit">Objeto:</label>
-                            <input type="text" class="form-control" id="objetoedit" aria-describedby="emailHelp" placeholder="Ingrese el objeto" required wire:model.defer="objeto">
-                        </div>
-                        <div class="form-group">
-                            <label for="objetoedit">Objeto:</label>
                             <textarea class="form-control" id="objetoedit" rows="5" placeholder="Ingrese el objeto" required wire:model.defer="objeto"></textarea>
                         </div>
-                        <div class="form-group">
+                            <div class="form-group">
+                            @if ($editLogo && is_null($logo))
+                            Previsualizacion del Logo:
+                            <img class="img-fluid" src="{{ asset('uploads').'/'.$editLogo}}">
+                            @endif
+                            @if ($logo)
+                            Previsualizacion del Logo:
+                            <img class="img-fluid" src="{{ $logo->temporaryUrl()}}">
+                            @endif
+                            <div wire:loading wire:target="logo">Cargando Logo...</div>
                             <label for="logoedit">Logo:</label>
-                            <input type="text" class="form-control" id="logoedit" aria-describedby="emailHelp" placeholder="Ingrese el logo" required wire:model.defer="logo">
+                            <input type="file" class="form-control" id="logoedit" accept="image/*" aria-describedby="emailHelp" placeholder="Ingrese el logo" required wire:model.defer="logo">
                         </div>
                         <div class="form-group">
                             <label for="directoredit">Director:</label>
@@ -162,8 +172,8 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    <button type="submit" class="btn btn-primary" form="editSemillero">Guardar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" wire:click="resetValues()">Cerrar</button>
+                    <button type="submit" class="btn btn-primary" form="editSemillero" @if(!$logo) disabled @endif>Guardar</button>
                 </div>
             </div>
         </div>

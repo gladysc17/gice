@@ -7,7 +7,7 @@
         <div class="card-body">
             <div class="d-flex flex-row-reverse my-3">
                 
-                <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#crearRed">Crear Red</button>
+                <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#crearRed" wire:click="resetValues()">Crear Red</button>
                
             </div>
             <div class="table-responsive">
@@ -37,8 +37,8 @@
                         <td>{{$re->aniocreacion}}</td>
                         <td>{{$re->tipovinculo}}</td>
                         <td>{{$re->paisesprticipantes}}</td>
-                        <td>{{$re->url	}}</td>
-                        <td>{{$re->logo	}}</td>
+                        <td><a href="{{$re->url}}" target="_blank">{{Str::of($re->url)->limit(20)}}</a></td>
+                        <td><img src="{{ asset('uploads').'/'.$re->logo}}" class="img-fluid"></td>
                         <td>{{$re->objetivoRed->count()}}</td>
                         <td>{{$re->actividades->count()}}</td>
 
@@ -88,8 +88,13 @@
                             <input type="text" class="form-control" id="tipovinculo" aria-describedby="emailHelp" placeholder="Ingrese el tipo de vinculo" required wire:model.defer="tipovinculo">
                         </div>
                         <div class="form-group">
+                        <div wire:loading wire:target="logo">Cargando Logo...</div>
+                        @if ($logo)
+                        <img class="img-fluid" src="{{ $logo->temporaryUrl()}}">
+                        Logo cargado correctamente
+                        @endif
                             <label for="logo">Logo:</label>
-                            <input type="text" class="form-control" id="logo" aria-describedby="emailHelp" placeholder="Ingrese el logo" required wire:model.defer="logo">
+                            <input type="file" class="form-control" id="logo" aria-describedby="emailHelp" placeholder="Ingrese el logo" accept="image/*" required wire:model.defer="logo">
                         </div>
                         <div class="form-group">
                             <label for="paisesprticipantes">Paises Participantes:</label>
@@ -150,8 +155,8 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    <button type="submit" class="btn btn-primary" form="newRed">Guardar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" wire:click="resetValues()">Cerrar</button>
+                    <button type="submit" class="btn btn-primary" form="newRed" @if(!$logo) disabled @endif>Guardar</button>
                 </div>
             </div>
         </div>
@@ -185,8 +190,17 @@
                             <input type="text" class="form-control" id="tipovinculonedit" aria-describedby="emailHelp" placeholder="Ingrese el tipo de vinculo" required wire:model.defer="tipovinculo">
                         </div>
                         <div class="form-group">
+                        @if ($editLogo && is_null($logo))
+                        Previsualizacion del Logo:
+                        <img class="img-fluid" src="{{ asset('uploads').'/'.$editLogo}}">
+                        @endif
+                        @if ($logo)
+                        Previsualizacion del Logo:
+                        <img class="img-fluid" src="{{ $logo->temporaryUrl()}}">
+                        @endif
+                        <div wire:loading wire:target="logo">Cargando Logo...</div>
                             <label for="logoedit">Logo:</label>
-                            <input type="text" class="form-control" id="logoedit" aria-describedby="emailHelp" placeholder="Ingrese el logo" required wire:model.defer="logo">
+                            <input type="file" class="form-control" accept="image/*" id="logoedit" aria-describedby="emailHelp" placeholder="Ingrese el logo" required wire:model.defer="logo">
                         </div>
                         <div class="form-group">
                             <label for="paisesprticipantesedit">Paises Participantes:</label>
@@ -248,8 +262,8 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    <button type="submit" class="btn btn-primary" form="editRed">Guardar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" wire:click="resetValues()">Cerrar</button>
+                    <button type="submit" class="btn btn-primary" form="editRed" @if(!$logo) disabled @endif>Guardar</button>
                 </div>
             </div>
         </div>

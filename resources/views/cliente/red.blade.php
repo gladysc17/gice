@@ -28,7 +28,7 @@
                 <tr>
                     <th style="text-align: center">
                         <h4> {{$re->nombre}} </h4>
-                        <img src="{{asset('img/'.$re->logo.'.png')}}"  class="img-fluid" title="LOGO">
+                        <img src="{{ asset('uploads').'/'.$re->logo}}" class="img-fluid">
                     </th>
                 
                 <th> 
